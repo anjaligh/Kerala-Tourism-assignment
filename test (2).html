@@ -10,10 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.2.0/zxcvbn.js"></script>    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
     <link rel="stylesheet" href="./css/bootstrap.min.css">
-    
         
 </head>
 <body>
@@ -56,65 +54,68 @@
        </div>
 
  <!--Form start-->
- <div class="row">
-  <div class="col-lg-4"></div>
-  <div class="col-lg-4 myMargin1">
-  <form action="signSuccess.html" onsubmit="return !!(validationo() & validationt() & validationemail() & validationph() & validationpwd());">
+    <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4 myMargin1">
+    <form action="signSuccess.html" onsubmit="return !!(validationo() & validationt() & validationemail() & validationph() & validationpwd() & matchpwd());">
 
-    <div class="form-row"> 
-      <div class="form-group required col-md-6">
-        <label class="control-label" for="name1">First Name</label>
-        <input type="text" class="form-control" id="name1" required>
-        <label for="validname" id="validn"></label>
+      <!-- <div class="form-row"> 
+        <div class="form-group required col-md-6">
+          <label class="control-label" for="name1">First Name</label>
+          <input type="text" class="form-control" id="name1" required>
+          <label for="validname" id="validn"></label>
+        </div>
+        <div class="form-group required col-md-6">
+          <label class="control-label"for="name2">Last Name</label> 
+          <input type="text" class="form-control" id="name2" required>
+          <label for="validname2" id="validn2"></label>  
+        </div>
+      </div> -->
+      <!-- <div class="form-group required">
+        <label class="control-label" for="email">E-mail ID</label>
+          <input type="text" class="form-control" id="email"  required placeholder="Example@mail.com" >
+          <label for="validm" id="validmail"></label>
+        </div> -->
+      <!-- <div class="form-group required">
+        <label class="control-label" for="name2">Mobile Number</label> 
+          <input type="tel" class="form-control" id="phone" name="phone" placeholder="xxx-xxx-xxxx  or  xxx xxx xxxx  or  xxx.xxx.xxxx" required> 
+          <label for="validphone" id="validph"></label> 
+        </div> -->
+      <div class="form-row">
+        <div class="form-group required col-md-6">
+          <label class="control-label" for="pass1">Password</label>
+          <input type="password" class="form-control" id="pwd" required>
+          <p id="message" ><span id="strength"></span> </p>
+          <label for="validpwd" id="validpwd"></label>
+        </div>
+        <div class="form-group required col-md-6">
+          <label class="control-label" for="passconfirm">Confirm Password</label>
+          <input type="password" class="form-control" id="passconfirm" required>
+          <label for="matchconf" id="matchconf"></label>
+        </div>
       </div>
-      <div class="form-group required col-md-6">
-        <label class="control-label"for="name2">Last Name</label> 
-        <input type="text" class="form-control" id="name2" required>
-        <label for="validname2" id="validn2"></label>  
-      </div>
-    </div>
-    <div class="form-group required">
-      <label class="control-label" for="email">E-mail ID</label>
-        <input type="text" class="form-control" id="email"  required placeholder="Example@mail.com" >
-        <label for="validm" id="validmail"></label>
-      </div>
-    <div class="form-group required">
-      <label class="control-label" for="name2">Mobile Number</label> 
-        <input type="tel" class="form-control" id="phone" name="phone" required> 
-        <label for="validphone" id="validph"></label> 
-      </div>
-    <div class="form-row">
-      <div class="form-group required col-md-6">
-        <label class="control-label" for="pass">Password</label>
-        <input type="password" class="form-control" id="pwd" required>
-        <p style="font-size: 14px;"><input type="checkbox" onclick="myFunction()"> Show Password</p>
-        <p id="message" ><span id="strength"></span> </p>
-        <label for="validpwd" id="validpwd"></label>
-      </div>
-      <div class="form-group required col-md-6">
-        <label class="control-label" for="passconfirm">Confirm Password</label>
-        <input type="password" class="form-control" id="passconfirm" required>
-        <label for="matchconf" id="matchconf"></label>
-      </div>
-    </div>
 
-    <div class="form-group">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="gridCheck">
-        <label class="form-check-label" for="gridCheck">
-          I have read the <a href="terms.html" >Terms and Conditions</a>
-        </label>
+
+
+
+      <div class="form-group">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck">
+          <label class="form-check-label" for="gridCheck">
+            I have read the <a href="terms.html" >Terms and Conditions</a>
+          </label>
+        </div>
       </div>
-    </div>
-    <div class="bot">
-      <button type="submit" class="btn btn-primary">Sign-Up</button>
-      <br>
-      <a href="login.html">Already have a Kerala Tourism account?</a>
-    </div>
-    <br><br>
-  </form>
- </div>
-</div>
+      <div class="bot">
+        <button type="submit" class="btn btn-primary">Sign-Up</button>
+        <br>
+        <a href="login.html">Already have a Kerala Tourism account?</a>
+      </div>
+      <br><br>
+    </form>
+   </div>
+  </div>
+  
 </div>
 <br>
 <br>
@@ -208,7 +209,7 @@
       <!-- Copyright -->
     </footer>
     <!-- Footer -->
-    <script src="signup.js"></script>
+    <script src="test.js"></script>
     
 </body>
 </html>

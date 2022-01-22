@@ -37,7 +37,7 @@ var name1j=document.getElementById("name1");
 let email= document.getElementById("email");
 let validmail= document.getElementById("validmail");
 function validationemail(){
-    let regexpmail = /^([A-Za-z0-9\.-]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(.[a-z]{2,3}?)$/
+    let regexpmail = /^([a-z\.-]+)([a-z0-9\.-]+)@([a-z0-9\-]+).([a-z]{2,3})(.[a-z]{2,3}?)$/
     if (regexpmail.test(email.value)){
         validmail.innerHTML="valid";
         validmail.style.color= "green";
@@ -55,6 +55,7 @@ function validationemail(){
 let phone= document.getElementById("phone");
 let validph= document.getElementById("validph");
 function validationph(){
+    let regexpmailn = /^([0-9\.-]{10})$/
     let regexpmail = /^([0-9\.-]{3})-([0-9\-]{3})-([0-9]{4})$/
     let regexpmail1 = /^([0-9\.-]{3}) ([0-9\-]{3}) ([0-9]{4})$/
     let regexpmail2 = /^([0-9\.-]{3}).([0-9\-]{3}).([0-9]{4})$/
@@ -63,7 +64,11 @@ function validationph(){
         validph.style.color= "green";
         return true;
     }
-    
+    else if (regexpmailn.test(phone.value)){
+        validph.innerHTML="valid";
+        validph.style.color= "green";
+        return true;
+    }
     else if (regexpmail1.test(phone.value)){
         validph.innerHTML="valid";
         validph.style.color= "green";
@@ -82,4 +87,68 @@ function validationph(){
     }
 }
 
+
+function myFunction() {
+    var x = document.getElementById("pwd");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  }
+
+  let pwd= document.getElementById("pwd");
+let validpwd= document.getElementById("validpwd");
+function validationpwd(){
+    let regExppwd= /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})$/
+    let regExppwd1= /^((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))'$/
+    if (regExppwd.test(pwd.value)){
+        validpwd.innerHTML="valid";
+        validpwd.style.color= "green";
+        return true;
+    }
+    else if (regExppwd1.test(pwd.value)){
+        validpwd.innerHTML="valid";
+        validpwd.style.color= "green";
+        return true;
+    }
+    else{
+        validpwd.innerHTML="Invalid Password";
+        validpwd.style.color= "red";
+        return false;
+    }
+}
+
+
+var msg= document.getElementById("message");
+var str= document.getElementById("strength");
+var pass= document.getElementById("pwd");
+
+pass.addEventListener('input', () => {
+    if (pass.value.length > 0){
+        msg.style.display="block";
+    }
+    else{
+        msg.style.display="none";
+    }
+    if (pass.value.length < 4){
+        pass.style.background ="red";
+        pass.style.color="white";
+        // str.innerHTML="Weak";
+        // str.style.color="red"
+    }
+    else if (pass.value.length > 4 && pass.value.length < 8){
+        pass.style.background ="orange";
+        pass.style.color="white";
+        // str.innerHTML="Medium";
+        // str.style.color="orange"
+    }
+    else if (pass.value.length >= 8){
+        pass.style.background ="green";
+        pass.style.color="white";
+        // str.innerHTML="Strong"
+        // str.style.color="green"
+
+    }
+})
 

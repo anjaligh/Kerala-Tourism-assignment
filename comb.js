@@ -1,89 +1,50 @@
+// timeout before a callback is called
 
+    let timeout;
 
+    // traversing the DOM and getting the input and span using their IDs
 
-function validation(){
-    var name1j=document.getElementById("name1");
-    var labelnj=document.getElementById("validn");
-    var name2j=document.getElementById("name2");
-    var labeln2=document.getElementById("validn2");
-    let email= document.getElementById("email");
-let validmail= document.getElementById("validmail");
-let phone= document.getElementById("phone");
-let validph= document.getElementById("validph");
-    let name1RegExp= /^([A-Za-z ]+)$/
-    let name2RegExp= /^([A-Za-z ]+)$/
-    let regexpmail = /^([A-Za-z0-9\.-]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(.[a-z]{2,3}?)$/
-    let regexpmail3 = /^([0-9\.-]{3})-([0-9\-]{3})-([0-9]{4})$/
-    let regexpmail1 = /^([0-9\.-]{3}) ([0-9\-]{3}) ([0-9]{4})$/
-    let regexpmail2 = /^([0-9\.-]{3}).([0-9\-]{3}).([0-9]{4})$/
-     if (name1RegExp.test(name1j.value) && name2RegExp.test(name2j.value)){
-        return true;
-     }
+    let password = document.getElementById('PassEntry')
+    let strengthBadge = document.getElementById('StrengthDisp')
 
-    //  && (regexpmail.test(email.value)) && ((regexpmail3.test(phone.value)) || (regexpmail1.test(phone.value)) || (regexpmail2.test(phone.value)))
-    //  else {
-    //     labelnj.innerText="Letters & spaces only!";
-    //     labelnj.style.color="red";
-    //      return false;
-    //  }
-     
-    //  //  last name
-     
+    // The strong and weak password Regex pattern checker
+
+    let strongPassword = new RegExp('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})')
+    let mediumPassword = new RegExp('((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))')
     
-    //  if (){
-    //     return true;
-    //  }
-    //  else {
-    //     labeln2.innerText="letters and spaces only!";
-    //     labeln2.style.color="red";
-    //      return false;
-    //  }
+    function StrengthChecker(PasswordParameter){
+        // We then change the badge's color and text based on the password strength
 
-     
-}
+        if(strongPassword.test(PasswordParameter)) {
+            strengthBadge.style.backgroundColor = "green"
+            strengthBadge.textContent = 'Strong'
+        } else if(mediumPassword.test(PasswordParameter)){
+            strengthBadge.style.backgroundColor = 'blue'
+            strengthBadge.textContent = 'Medium'
+        } else{
+            strengthBadge.style.backgroundColor = 'red'
+            strengthBadge.textContent = 'Weak'
+        }
+    }
 
+    // Adding an input event listener when a user types to the  password input 
 
+    password.addEventListener("input", () => {
 
+        //The badge is hidden by default, so we show it
 
-// function validation(){
-    
-//     if (){
-//         validmail.innerHTML="valid";
-//         validmail.style.color= "green";
-//         return true;
-//     }
-   
-//     else{
-//         validmail.innerHTML="Invalid mail Id";
-//         validmail.style.color= "red";
-//         return false;
-//     }
-// }
+        strengthBadge.style.display= 'block'
+        clearTimeout(timeout);
 
-// // phone number validation
+        //We then call the StrengChecker function as a callback then pass the typed password to it
 
-// function validation(){
-    
-//     if {
-//         validph.innerHTML="valid";
-//         validph.style.color= "green";
-//         return true;
-//     }
-    
-//     else if (regexpmail1.test(phone.value)){
-//         validph.innerHTML="valid";
-//         validph.style.color= "green";
-//         return true;
-//     }
-//     else if (regexpmail2.test(phone.value)){
-//         validph.innerHTML="valid";
-//         validph.style.color= "green";
-//         return true;
-//     }
-   
-//     else{
-//         validph.innerHTML="Invalid phone number";
-//         validph.style.color= "red";
-//         return false;
-//     }
-// }
+        timeout = setTimeout(() => StrengthChecker(password.value), 500);
+
+        //Incase a user clears the text, the badge is hidden again
+
+        if(password.value.length !== 0){
+            strengthBadge.style.display != 'block'
+        } else{
+            strengthBadge.style.display = 'none'
+        }
+    });

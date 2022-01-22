@@ -145,3 +145,8 @@ color: white;
 .form-group.required .control-label:after {
     content:" *";color:red;
   }
+#message{
+    color: black;
+    display: none;
+}
+
