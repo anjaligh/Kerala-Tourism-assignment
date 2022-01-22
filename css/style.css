@@ -142,3 +142,6 @@ color: white;
 .card{
     margin-right: 20px;
 }
+.form-group.required .control-label:after {
+    content:" *";color:red;
+  }
