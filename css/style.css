@@ -149,4 +149,16 @@ color: white;
     color: black;
     display: none;
 }
+#butqm{
+    size: 3px;
+    background: transparent;
+    border: 0;
+    outline: none;
+    border-radius: 25px;
+    cursor: pointer;
+    position: absolute;
+    top: 38%;
+    transform: translateY(-50%);
+    right: 5px;
+}
 

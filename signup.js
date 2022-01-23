@@ -152,3 +152,16 @@ pass.addEventListener('input', () => {
     }
 })
 
+let matchconf= document.querySelector('#matchconf');
+let passconfirm1= document.querySelector('#passconfirm');
+let pwd1= document.getElementById('#pwd');
+function checkpassword(){
+    if((pwd1.value) !== (passconfirm1.value)){
+        alert("passwords do match");
+        return false;
+    }
+    else{
+        alert("passwords do not match");
+        return true;
+    }
+}

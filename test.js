@@ -1,13 +1,14 @@
-var matchconf=document.getElementById("matchconf");
-var passconfirm= document.getElementById("passconfirm");
-var pwd= document.getElementById("pwd");
+var matchconf= document.getElementById("matchconf");
+var passconfirm= document.getElementById("passconfirm").value;
+var pwd= document.getElementById("pwd").value;
 function matchpwd(){
-    if((passconfirm.value)===(pwd.value)){
-        matchconf.innerHTML="matching";
-        return true
+    // alert("passwords do match");
+    if(passconfirm.length !== pwd.length){
+        alert("password lengths do not match");
+        return false;
     }
     else{
-        matchconf.innerHTML="not";
+        alert("passwords do match");
         return false;
     }
 }
