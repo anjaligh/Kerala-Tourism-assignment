@@ -118,13 +118,13 @@ function validationpwd(){
     let regExppwd= /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{8,})$/
     let regExppwd1= /^((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9])(?=.{6,}))|((?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9])(?=.{8,}))'$/
     if (regExppwd.test(pwd.value)){
-        validpwd.innerHTML="valid";
+        validpwd.innerHTML="Password is Valid";
         validpwd.style.color= "green";
         validpwd.style.fontSize="15px";
         return true;
     }
     else if (regExppwd1.test(pwd.value)){
-        validpwd.innerHTML="valid";
+        validpwd.innerHTML="Password is Valid";
         validpwd.style.color= "green";
         validpwd.style.fontSize="15px";
         return true;
@@ -170,16 +170,16 @@ pass.addEventListener('input', () => {
     }
 })
 
-// let matchconf= document.querySelector('#matchconf');
-// let passconfirm1= document.querySelector('#passconfirm');
-// let pwd1= document.getElementById('#pwd');
-// function checkpassword(){
-//     if((pwd1.value) !== (passconfirm1.value)){
-//         alert("passwords do match");
-//         return false;
-//     }
-//     else{
-//         alert("passwords do not match");
-//         return true;
-//     }
-// }
+let matchconf= document.querySelector('#matchconf');
+let passconfirm1= document.querySelector('#passconfirm');
+let pwd1= document.getElementById('#pwd');
+function checkpassword(){
+    if((pwd1.value) !== (passconfirm1.value)){
+        alert("passwords do match");
+        return false;
+    }
+    else{
+        alert("passwords do not match");
+        return true;
+    }
+}
