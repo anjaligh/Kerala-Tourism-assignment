@@ -16,37 +16,7 @@
 </head>
 <body>
   <div class="bodyportion">
-    <!--Naviation bar start-->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:rgb(52, 44, 61)">
-        <a class="navbar-brand" href="#">
-            <img src="./images/logoKT2.jpg" alt="" width="90" height="70">
-          </a>
-          <a class="navbar-brand" style="font-family: cursive; color:greenyellow;" href="#" >Kerala Tourism</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="login.html">Login</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="signup.html">Sign-Up</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="districts.html">Districts</a>
-              </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-info my-2 my-sm-0" type="submit">Search</button>
-          </form>
-        </div>
-      </nav>
-      <!--Naviation bar end-->
+    
       <!-- form start -->
       <div class="login">
        <div class="headingLogin">
@@ -57,8 +27,8 @@
     <div class="row">
     <div class="col-lg-4"></div>
     <div class="col-lg-4 myMargin1">
-    <form action="signSuccess.html" onsubmit="return !!(validationo() & validationt() & validationemail() & validationph() & validationpwd() & matchpwd());">
-
+    <!-- <form action="signSuccess.html" onsubmit="return !!(validationo() & validationt() & validationemail() & validationph() & validationpwd() & matchpwd());"> -->
+      <form action="signSuccess.html" onsubmit="return matchpwd()">
       <!-- <div class="form-row"> 
         <div class="form-group required col-md-6">
           <label class="control-label" for="name1">First Name</label>

@@ -145,10 +145,10 @@ color: white;
 .form-group.required .control-label:after {
     content:" *";color:red;
   }
-#message{
+/* #message{
     color: black;
     display: none;
-}
+} */
 #butqm{
     size: 3px;
     background: transparent;
@@ -160,5 +160,8 @@ color: white;
     top: 38%;
     transform: translateY(-50%);
     right: 5px;
+}
+.passwordReq{
+    align-content: center; 
 }
 

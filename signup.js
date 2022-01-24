@@ -3,11 +3,15 @@ var name1j=document.getElementById("name1");
    function validationo(){
        let name1RegExp= /^([A-Za-z ]+)$/
         if (name1RegExp.test(name1j.value)){
+            labelnj.innerText="Valid";
+           labelnj.style.color="green";
+           labelnj.style.fontSize="15px";
          return true;
         }
         else {
-           labelnj.innerText="Invalid First Name!";
+           labelnj.innerText="Invalid!";
            labelnj.style.color="red";
+           labelnj.style.fontSize="15px";
            return false;
         }
    }
@@ -19,11 +23,15 @@ var name1j=document.getElementById("name1");
    function validationt(){
        let name2RegExp= /^([A-Za-z ]+)$/
         if (name2RegExp.test(name2j.value)){
+            labeln2.innerText="Valid";
+           labeln2.style.color="green";
+           labeln2.style.fontSize="15px";
             return true;
         }
         else {
-           labeln2.innerText="Invalid Last Name!";
+           labeln2.innerText="Invalid!";
            labeln2.style.color="red";
+           labeln2.style.fontSize="15px";
            return false;
    
         }
@@ -39,14 +47,16 @@ let validmail= document.getElementById("validmail");
 function validationemail(){
     let regexpmail = /^([a-z\.-]+)([a-z0-9\.-]+)@([a-z0-9\-]+).([a-z]{2,3})(.[a-z]{2,3}?)$/
     if (regexpmail.test(email.value)){
-        validmail.innerHTML="valid";
+        validmail.innerHTML="Valid";
         validmail.style.color= "green";
+        validmail.style.fontSize="15px";
         return true;
     }
    
     else{
-        validmail.innerHTML="Invalid mail Id";
+        validmail.innerHTML="Invalid!";
         validmail.style.color= "red";
+        validmail.style.fontSize="15px";
         return false;
     }
 }
@@ -60,29 +70,34 @@ function validationph(){
     let regexpmail1 = /^([0-9\.-]{3}) ([0-9\-]{3}) ([0-9]{4})$/
     let regexpmail2 = /^([0-9\.-]{3}).([0-9\-]{3}).([0-9]{4})$/
     if (regexpmail.test(phone.value)){
-        validph.innerHTML="valid";
+        validph.innerHTML="Valid";
         validph.style.color= "green";
+        validph.style.fontSize="15px";
         return true;
     }
     else if (regexpmailn.test(phone.value)){
-        validph.innerHTML="valid";
+        validph.innerHTML="Valid";
         validph.style.color= "green";
+        validph.style.fontSize="15px";
         return true;
     }
     else if (regexpmail1.test(phone.value)){
-        validph.innerHTML="valid";
+        validph.innerHTML="Valid";
         validph.style.color= "green";
+        validph.style.fontSize="15px";
         return true;
     }
     else if (regexpmail2.test(phone.value)){
-        validph.innerHTML="valid";
+        validph.innerHTML="Valid";
         validph.style.color= "green";
+        validph.style.fontSize="15px";
         return true;
     }
    
     else{
-        validph.innerHTML="Invalid phone number";
+        validph.innerHTML="Invalid!";
         validph.style.color= "red";
+        validph.style.fontSize="15px";
         return false;
     }
 }
@@ -105,16 +120,19 @@ function validationpwd(){
     if (regExppwd.test(pwd.value)){
         validpwd.innerHTML="valid";
         validpwd.style.color= "green";
+        validpwd.style.fontSize="15px";
         return true;
     }
     else if (regExppwd1.test(pwd.value)){
         validpwd.innerHTML="valid";
         validpwd.style.color= "green";
+        validpwd.style.fontSize="15px";
         return true;
     }
     else{
         validpwd.innerHTML="Invalid Password";
         validpwd.style.color= "red";
+        validpwd.style.fontSize="15px";
         return false;
     }
 }
@@ -152,16 +170,16 @@ pass.addEventListener('input', () => {
     }
 })
 
-let matchconf= document.querySelector('#matchconf');
-let passconfirm1= document.querySelector('#passconfirm');
-let pwd1= document.getElementById('#pwd');
-function checkpassword(){
-    if((pwd1.value) !== (passconfirm1.value)){
-        alert("passwords do match");
-        return false;
-    }
-    else{
-        alert("passwords do not match");
-        return true;
-    }
-}
+// let matchconf= document.querySelector('#matchconf');
+// let passconfirm1= document.querySelector('#passconfirm');
+// let pwd1= document.getElementById('#pwd');
+// function checkpassword(){
+//     if((pwd1.value) !== (passconfirm1.value)){
+//         alert("passwords do match");
+//         return false;
+//     }
+//     else{
+//         alert("passwords do not match");
+//         return true;
+//     }
+// }

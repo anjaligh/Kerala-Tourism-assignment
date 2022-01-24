@@ -7,8 +7,9 @@ function matchpwd(){
         alert("password lengths do not match");
         return false;
     }
+    
     else{
         alert("passwords do match");
-        return false;
+        return true;
     }
 }
