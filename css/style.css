@@ -161,7 +161,27 @@ color: white;
     transform: translateY(-50%);
     right: 5px;
 }
-.passwordReq{
-    align-content: center; 
+.btn-primary{
+    width: 100%;
 }
-
+.btn-info{
+    width: 100%;
+}
+#validpwd{
+    display: none;
+}
+#matchconf{
+    display: none;
+}
+#validph{
+    display: none;
+}
+#validmail{
+    display: none;
+}
+#validn2{
+    display: none;
+}
+#validn{
+    display: none;
+}
